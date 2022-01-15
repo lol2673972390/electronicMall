@@ -12,6 +12,7 @@ module.exports = {
           pxtorem({
             rootValue: 75,
             propList: ['*'],
+            // selectorBlackList: ['van'],
           }),
         ],
       },

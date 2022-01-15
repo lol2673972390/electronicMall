@@ -2,6 +2,7 @@
 const Api = {
   TABS_API: '/api/tabs',
   TAB_API: '/api/tab',
+  HOME_BANNER: '/api/tab/1',
 }
 
 // 导出

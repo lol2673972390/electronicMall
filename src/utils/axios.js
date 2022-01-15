@@ -15,11 +15,11 @@ const service = axios.create({
   baseURL,
   // 请求延迟
   timeout: 5000,
-  withCredentials: true, // 表示跨域时是否需要使用凭证
+  // withCredentials: true, // 表示跨域时是否需要使用凭证
 })
 
 // 添加 axios 请求拦截器
-service.interceptors.request(config => {
+service.interceptors.request.use(config => {
   // 每次请求后端时，请求头中设置的token
   config.headers.token = 'xxxxxx'
 
@@ -33,12 +33,12 @@ service.interceptors.request(config => {
 })
 
 // 添加 axios 响应拦截器
-service.interceptors.response(response => {
+service.interceptors.response.use(response => {
   // 关闭提示框
   Toast.clear()
 
   //   判断服务器状态 status
-  if (response.status >= 200 && response < 300) {
+  if (response.status >= 200 && response.status < 300) {
     // 获取服务端响应返回的数据
     const { code, data } = response.data
 
