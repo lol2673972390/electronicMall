@@ -6,6 +6,7 @@
       <router-view/>
     </div>
     <router-view name="tabbar" />
+    <router-view name="goodsAction" />
   </div>
 </template>
 

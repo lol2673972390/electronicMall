@@ -3,7 +3,8 @@ import Home from '@/views/Home/'
 import ListHome from '@/views/listHome/'
 import Mine from '@/views/Mine/'
 import Cart from '@/views/Cart/'
-import Itemize from '@/views/Itemize'
+import Itemize from '@/views/Itemize/'
+import Details from '@/views/Details/'
 
 // 公用组件
 // 底部导航
@@ -12,6 +13,8 @@ import tabbar from '@/components/tabbar.vue'
 import searchJump from '@/components/searchJump.vue'
 // 滚动导航
 import tabScroll from '@/components/tabScroll.vue'
+// 商品导航
+import goodsAction from '@/components/goodsAction.vue'
 
 const routes = [
   {
@@ -30,7 +33,7 @@ const routes = [
     },
   },
   {
-    path: '/itemize',
+    path: '/itemize/:id',
     name: 'Itemize',
     components: {
       default: Itemize,
@@ -69,13 +72,21 @@ const routes = [
     },
   },
   {
-    path: '/tab',
+    path: '/tab/:id',
     name: 'HomeTab',
     components: {
       searchJump,
       tabScroll,
       default: ListHome,
       tabbar,
+    },
+  },
+  {
+    path: '/details/:id',
+    name: 'Details',
+    components: {
+      default: Details,
+      goodsAction,
     },
   },
 ]

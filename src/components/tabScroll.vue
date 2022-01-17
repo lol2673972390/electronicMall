@@ -1,8 +1,8 @@
 <template lang="">
    <div id="nav">
-     <div class="navBox">
+     <div class="navBox" ref="navBox">
         <van-tabs background="#fdde4a" router line-height="4px" color="#43240c" class="box" v-model="listOrder">
-              <van-tab :title-class="{'first': !index}" v-for="(list, index) in listTitle" :key="list.id" :title="list.name" :to="{path:(index===0 ? `/` : `/tab`),query:(index===0?false : {id:list.id})}" :ref="`${list}_${index}`">
+              <van-tab :title-class="{'first': !index}" v-for="(list, index) in listTitle" :key="list.id" :title="list.name" :to="{name:(index===0 ? `Home` : `HomeTab`), params:( index===0 ? false : {id: list.id} ) }" :ref="`${list}_${index}`">
               </van-tab>
           </van-tabs>
           <van-icon name="bars" to="/mine" @click="showPopup"></van-icon>
@@ -15,7 +15,7 @@
     </div> -->
     <van-popup v-model="show" position="right" :style="{ height: '100%', width: `30%`}" >
        <van-grid :column-num="1" icon-size="38px">
-        <van-grid-item v-for="(value, index) in listTitle" :key="value.id" :icon="value.imageUrl" :text="value.name" :to="{path: `/tab`,query:{id:value.id}}" @click="closeGongGe(this,index)" />
+        <van-grid-item v-for="(value, index) in listTitle" :key="value.id" :icon="value.imageUrl" :text="value.name" :to="{name: `HomeTab`, params:{id:value.id} }" @click="closeGongGe(this,index)" />
       </van-grid>
     </van-popup>
    </div>

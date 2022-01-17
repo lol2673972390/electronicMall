@@ -1,7 +1,18 @@
 import Vue from 'vue'
 
-import { NavBar, Icon, Search, Tab, Tabs, Swipe, SwipeItem, Lazyload, Grid, GridItem, Badge, Popup } from 'vant'
+import { NavBar, Icon, Search, Tab, Tabs, Swipe, SwipeItem, Lazyload, Grid, GridItem, Badge, Popup, List, Card, Tag, Cell, CellGroup, Image as VanImage, Sidebar, SidebarItem, GoodsAction, GoodsActionIcon, GoodsActionButton } from 'vant'
 
+Vue.use(GoodsAction)
+Vue.use(GoodsActionButton)
+Vue.use(GoodsActionIcon)
+Vue.use(Sidebar)
+Vue.use(SidebarItem)
+Vue.use(VanImage)
+Vue.use(Cell)
+Vue.use(CellGroup)
+Vue.use(Tag)
+Vue.use(Card)
+Vue.use(List)
 Vue.use(Popup)
 Vue.use(Badge)
 Vue.use(Grid)

@@ -1,6 +1,6 @@
 <template lang="">
     <ul>
-        <router-link v-for="tab in tabs" :key="tab.path" tag="li" :to="tab.path"><van-icon :name="tab.meta.icon"></van-icon>{{ tab.meta.title }}</router-link>
+        <router-link v-for="tab in tabs" :key="tab.path" tag="li" :to="(tab.name === 'Itemize' ? { name: tab.name , params: { id: $store.state.itemizeRecord } } : tab.path)"><van-icon :name="tab.meta.icon"></van-icon>{{ tab.meta.title }}</router-link>
     </ul>
 </template>
 <script>
